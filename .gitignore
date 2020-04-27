@@ -5,8 +5,8 @@ target/
 !**/src/test/**
 
 ### DataBase ###
-bazaDanych.mv.db
-bazaDanych.mv.db
+*.db
+
 
 ### STS ###
 .apt_generated
