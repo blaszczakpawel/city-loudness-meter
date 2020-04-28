@@ -1,6 +1,8 @@
 package pl.pk.project.pz.sound_intensity.pojo;
 
 
+import java.util.Objects;
+
 public class Features {
     private final String Type="Feature";
     private Properties properties;
@@ -30,5 +32,20 @@ public class Features {
 
     public String getType() {
         return Type;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Features)) return false;
+        Features features = (Features) o;
+        return Objects.equals(getType(), features.getType()) &&
+                Objects.equals(getProperties(), features.getProperties()) &&
+                Objects.equals(getGeometry(), features.getGeometry());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getType(), getProperties(), getGeometry());
     }
 }

@@ -27,12 +27,15 @@ public class SoundAndLocationManager {
     public Optional<SoundAndLocation> findById(Long id){
         return soundAndLocationRepo.findById(id);
     }
+
     public FeatureCollection findAll(){
         return convertToFeatureCollection.convertToFeatureCollection(soundAndLocationRepo.findAll());
     }
+
     public SoundAndLocation save(SoundAndLocation soundAndLocation){
         return  soundAndLocationRepo.save(soundAndLocation);
     }
+
     public void deleteById(Long id){
         soundAndLocationRepo.deleteById(id);
     }
