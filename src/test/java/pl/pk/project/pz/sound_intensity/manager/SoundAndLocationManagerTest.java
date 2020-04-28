@@ -116,7 +116,7 @@ public class SoundAndLocationManagerTest {
     }
 
     @Test
-    public void findAll_EmptyList(){
+    public void findAll_ReturnEmptyList(){
 
         FeatureCollection featureCollection = new FeatureCollection(Collections.emptyList());
 
@@ -194,4 +194,37 @@ public class SoundAndLocationManagerTest {
         //then
         assertEquals(featureCollectionResult,featureCollection);
     }
+
+    /*
+    @Test
+    public void getPointsBetweenDate_WhenNegativeValuesGiven() {
+
+        //Data for repository function
+        final LocalDateTime firstDate = LocalDateTime.of(2015, Month.JUNE, 29, 10, 30, 40);
+        final LocalDateTime secondDate = LocalDateTime.of(2015, Month.AUGUST, 12, 14, 21, 12);
+
+        OffsetDateTime odt = OffsetDateTime.now ();
+        ZoneOffset zoneOffset = odt.getOffset ();
+
+        Instant instant1 = firstDate.toInstant(zoneOffset);
+        Instant instant2 = secondDate.toInstant(zoneOffset);
+
+        long firstDateMil = -instant1.toEpochMilli();
+        long secondDateMil = -instant2.toEpochMilli();
+
+        //given
+        given(soundAndLocationRepo.findAllByDateTimeBetween(firstDate,secondDate)).willReturn(Collections.emptyList());
+        //when
+        FeatureCollection featureCollectionResult = soundAndLocationManager.getPointsBetweenDate(firstDateMil,secondDateMil);
+        //then
+        assertEquals(Collections.emptyList(),featureCollectionResult );
+    }
+
+    */
+
+
+
+
+
+
 }

@@ -72,7 +72,7 @@ public class SoundAndLocationApiTest {
     }
 
     @Test
-    public void getAll_CorrectFromAndToDate_CheckServerResponse() {
+    public void getAll_CorrectFromAndToDate_CheckServerResponseWhenNullValuesGiven() {
 
         List<Features> featuresList = new ArrayList<>();
         featuresList.add(new Features(new Properties(5.2),new Geometry(new Double[]{1.0,2.0})));
@@ -88,7 +88,7 @@ public class SoundAndLocationApiTest {
         //when
         ResponseEntity<FeatureCollection> responseEntity;
         try {
-            responseEntity = soundAndLocationApi.getAll(12898L,71237L);
+            responseEntity = soundAndLocationApi.getAll(null,null);
             //then
             assertEquals(responseEntity.getStatusCodeValue(), 200);
         } catch (Exception e) {
@@ -98,7 +98,7 @@ public class SoundAndLocationApiTest {
     }
 
     @Test
-    public void getAll_CorrectFromAndToDate_CheckReturnType() {
+    public void getAll_ToAndFromDatesAreNull() {
 
         List<Features> featuresList = new ArrayList<>();
         featuresList.add(new Features(new Properties(5.2),new Geometry(new Double[]{1.0,2.0})));
@@ -113,9 +113,34 @@ public class SoundAndLocationApiTest {
         //when
         ResponseEntity<FeatureCollection> responseEntity;
         try {
-            responseEntity = soundAndLocationApi.getAll(12898L,71237L);
+            responseEntity = soundAndLocationApi.getAll(null,null);
             //then
             assertEquals(responseEntity,expectedResult);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    @Test
+    public void getAll_CorrectFromAndToDateNotNullValues() {
+
+        List<Features> featuresList = new ArrayList<>();
+        featuresList.add(new Features(new Properties(5.2),new Geometry(new Double[]{1.0,2.0})));
+        featuresList.add(new Features(new Properties(3.4),new Geometry(new Double[]{2.4,6.4})));
+
+        FeatureCollection featureCollection = new FeatureCollection(featuresList);
+
+        ResponseEntity<FeatureCollection> expectedResult = new ResponseEntity<>(featureCollection,HttpStatus.OK);
+
+        //given
+        given(soundAndLocationManager.getPointsBetweenDate(1586815200000L,1588197600000L)).willReturn(featureCollection);
+        //when
+        ResponseEntity<FeatureCollection> responseEntity;
+        try {
+            responseEntity = soundAndLocationApi.getAll(1586815200000L,1588197600000L);
+            //then
+            assertEquals(expectedResult,responseEntity);
         } catch (Exception e) {
             e.printStackTrace();
         }
