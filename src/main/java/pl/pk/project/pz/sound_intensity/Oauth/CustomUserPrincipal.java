@@ -15,7 +15,7 @@ public class CustomUserPrincipal implements UserDetails {
     public CustomUserPrincipal(User user){
         this.user=user;
     }
-
+    public CustomUserPrincipal(){}
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return Arrays.asList(new SimpleGrantedAuthority("ROLE_USER"));

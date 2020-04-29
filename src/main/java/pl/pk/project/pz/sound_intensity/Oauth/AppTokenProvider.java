@@ -1,7 +1,9 @@
 package pl.pk.project.pz.sound_intensity.Oauth;
 
+
+import org.springframework.security.jwt.Jwt;
 import org.springframework.security.oauth2.jose.jws.SignatureAlgorithm;
-import org.springframework.stereotype.Component;
+
 
 import java.util.Date;
 
@@ -13,8 +15,8 @@ public class AppTokenProvider {
     private static final String HEADER_STRING = "Authorization";
 
 
-    /*private static String getNewPerishableToken(String userId) {
-        return Jwts.builder()
+  /* private static String getNewPerishableToken(String userId) {
+        return jjwt.builder()
                 .setSubject(userId)
                 .setExpiration(new Date(System.nanoTime() + EXPIRATION_TIME_SECONDS))
                 .signWith(SignatureAlgorithm.HS512, SECRET)
