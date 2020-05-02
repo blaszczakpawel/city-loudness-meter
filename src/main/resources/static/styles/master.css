@@ -1,8 +1,19 @@
+html {
+	scroll-behavior: smooth;
+}
+
 body {
 	margin: 0;
 	display: flex;
-	justify-content: center;
 	font-family: "Noto Sans", "Lucida Grande", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+aside {
+	width: 20vw;
+	padding: 1em;
+	position: relative;
+	box-sizing: border-box;
+	height: 100vh;
 }
 
 a {

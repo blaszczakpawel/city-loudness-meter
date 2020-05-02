@@ -1,14 +1,84 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
-<title>city-loudness-meter API</title>
+<title>city-loudness-meter documentation</title>
+<script type="text/javascript" src="scripts/wiki.js" defer></script>
 <link rel="stylesheet" type="text/css" href="styles/master.css">
 <link rel="stylesheet" type="text/css" href="styles/wiki.css">
+<aside>
+	<ul>
+		<li><a href="#forYourWebsite">city-loudness-meter for your website</a>
+			<ul>
+				<li><a href="#frame">frame</a>
+			</ul>
+		<li><a href="#publicAPIRoutes">Public API routes</a>
+			<ul>
+				<li><a href="#location/all">location/all</a>
+			</ul>
+	</ul>
+</aside>
 <main>
-	<h1>city-loudness-meter API guide</h1>
+	<h2><a name="forYourWebsite"></a>city-loudness-meter for your website</h2>
+	<h3><a name="frame"></a>Frame</h3>
 	<p>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec lacus ac tellus fringilla semper. Morbi elementum ipsum orci, sit amet tempor lorem viverra vitae. Etiam tincidunt nulla ipsum, sed vehicula ante suscipit a. Suspendisse rhoncus, leo id dictum convallis, turpis nibh eleifend ex, a interdum arcu nulla cursus magna. Nam varius enim libero, vel molestie leo pretium quis. In ut viverra ex, vitae faucibus diam. Morbi porttitor vulputate est ut tempor. In auctor quam eu mauris mollis, et sodales mi blandit. Aenean elementum a felis in rhoncus. Maecenas et sem vehicula tortor venenatis suscipit. Mauris ultricies mauris et augue pharetra imperdiet. Pellentesque vitae leo mauris. Cras consequat justo orci, a ultrices ligula gravida in. Aliquam consequat facilisis leo, ut varius orci pellentesque ut. 
+		To-do.
+	<h2><a name="publicAPIRoutes"></a>Public API routes</h2>
+	<h3><a name="location/all"></a><span data-here></span>/api/location/all</h3>
 	<p>
-		Donec erat diam, suscipit ac lacus id, malesuada molestie massa. Donec facilisis egestas cursus. Curabitur sed neque sit amet libero maximus luctus id sed urna. Aliquam sed arcu sit amet turpis porttitor maximus a vel orci. In tincidunt scelerisque neque non elementum. Mauris sodales neque at arcu egestas aliquet. Sed et ante odio. 
+		API route used to extract sound intensity data in <a href="https://geojson.org/" target="_blank">GeoJSON</a> format.
 	<p>
-		Sed dictum, diam sit amet rhoncus efficitur, nibh dolor commodo nunc, vel tincidunt dolor libero mollis urna. Vivamus vulputate eros in metus luctus efficitur.
+		Method: <code>GET</code>
+	<p>
+		Parameters:
+		<ul>
+			<li><code>fromDate</code> (optional): Unix timestamp that is the lower threshold for data filtering by date.
+			<li><code>toDate</code> (optional): Unix timestamp that is the upper threshold for data filtering by date.
+		</ul>
+	<p>
+		Example request:
+		<code><span data-here></span>/api/location/all?fromDate=1586815200000&toDate=1588197600000</code>
+	<p>
+		Response body:
+		<pre>
+			<code>
+MediaType: GeoJson
+
+"type" - String - type of object
+"features" - list&lt;Features&gt;
+	
+	Features: 
+		"type" - String - type of object 
+		"properies" - Properties object
+
+			Properties: 
+				"magnitude" - Double - relative sound intensity in decibels.
+		
+		"geometry" – geometry object
+			
+			Geometry:
+				"type" - String - type of geometry object
+				"coordinates" – Double[] - geographical coordinates vector in [lon, lat] format.
+			</code>
+		</pre>
+
+		Example response body:
+		<pre>
+			<code>
+{
+	"type": "FeatureCollection",
+	"features": [
+		{
+			"type": "Feature",
+			"properties": {
+				"magnitude": 59
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [19.945,50.0647]
+			}
+		}
+	]
+}
+			</code>
+		</pre>
+		
 </main>
