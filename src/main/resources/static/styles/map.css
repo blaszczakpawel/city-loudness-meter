@@ -75,3 +75,34 @@ aside {
     padding: 0.5em;
     margin: 0.25em 0;
 }
+
+#scale {
+	position: absolute;
+	margin: 0 1rem;
+	right: 1rem;
+	top: 10vh;
+	
+	width: 1rem;
+	height: 80vh;
+	border-radius: 0.25rem;
+	background: rgb(255,0,0);
+	background: linear-gradient(180deg, rgba(255,0,0,1) 0%, rgba(243,255,0,1) 33%, rgba(0,255,31,0.6600841020001751) 66%, rgba(0,93,255,0.33235300956320024) 100%);
+}
+
+#scale::before, #scale::after {
+	position: absolute;
+	right: -1.5rem;
+
+	width: 4rem;
+	text-align: center;
+}
+
+#scale::before {
+	content: "30dB";
+	bottom: -1.5rem;
+}
+
+#scale::after {
+	content: "100dB";
+	top: -1.5rem;
+}

@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.*;
 import pl.pk.project.pz.sound_intensity.dao.entity.SoundAndLocation;
 import pl.pk.project.pz.sound_intensity.manager.SoundAndLocationManager;
 import pl.pk.project.pz.sound_intensity.pojo.FeatureCollection;
-
 import javax.validation.Valid;
 
 import java.util.*;
@@ -25,13 +24,13 @@ public class SoundAndLocationApi {
     }
     @GetMapping("/all")
     public ResponseEntity<FeatureCollection>getAll(@RequestParam(name = "fromDate",required = false)Long fromDate,
-                                                    @RequestParam(name ="toDate",required = false)Long toDate)throws Exception{ if(fromDate==null&&toDate==null){
+                                                    @RequestParam(name ="toDate",required = false)Long toDate)throws Exception{
+        if(fromDate==null&&toDate==null){
         return new ResponseEntity<>(soundAndLocationManager.findAll(), HttpStatus.OK);
     }else{
         return new ResponseEntity<>(soundAndLocationManager.getPointsBetweenDate(fromDate,toDate),HttpStatus.OK);
     }
     }
-
 
     @GetMapping
     public ResponseEntity<Optional<SoundAndLocation>> getById(@RequestParam Long id) throws Exception{
