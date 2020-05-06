@@ -1,6 +1,7 @@
 #map {
-    width: 80vw;
+    width: 75vw;
     height: 100vh;
+    cursor: grab;
 }
 
 #searchBar {
@@ -30,22 +31,6 @@
     border: none;
     cursor: pointer;
     background: none;
-}
-
-#info {
-    left: 0;
-    bottom: 1em;
-    position: fixed;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    width: inherit;
-    list-style: none;
-    justify-content: space-around;
-}
-
-#info li {
-    padding: 0;
 }
 
 #filters {
