@@ -96,12 +96,12 @@ public class SoundAndLocationManagerTest {
         double magnitude = 30.0;
 
         // Test List
-        List<SoundAndLocation> soundAndLocationList = new ArrayList<>();
-
-        soundAndLocationList.add(new SoundAndLocation(latitude,longitude,magnitude,LocalDateTime.now()));
-        soundAndLocationList.add(new SoundAndLocation(latitude,longitude,magnitude,LocalDateTime.now()));
-        soundAndLocationList.add(new SoundAndLocation(latitude,longitude,magnitude,LocalDateTime.now()));
-        soundAndLocationList.add(new SoundAndLocation(latitude,longitude,magnitude,LocalDateTime.now()));
+        List<SoundAndLocation> soundAndLocationList = List.of(
+                new SoundAndLocation(latitude,longitude,magnitude,LocalDateTime.now()),
+                new SoundAndLocation(latitude,longitude,magnitude,LocalDateTime.now()),
+                new SoundAndLocation(latitude,longitude,magnitude,LocalDateTime.now()),
+                new SoundAndLocation(latitude,longitude,magnitude,LocalDateTime.now())
+        );
 
         FeatureCollection featureCollection = convertToFeatureCollection.convertToFeatureCollection(soundAndLocationList);
 
@@ -154,7 +154,50 @@ public class SoundAndLocationManagerTest {
     }
 
     @Test
-    public void getLocation() {
+    public void getLocationWhenLocationExist() {
+
+        int attempts = 10;
+
+        //Data for SoundAndLocation Objects
+        double latitude = 10.0;
+        double longitude = 20.0;
+        double magnitude = 30.0;
+
+        // Test List
+        List<SoundAndLocation> soundAndLocationList = List.of(
+                new SoundAndLocation(latitude,longitude,magnitude,LocalDateTime.now()),
+                new SoundAndLocation(latitude,longitude,magnitude,LocalDateTime.now()),
+                new SoundAndLocation(latitude,longitude,magnitude,LocalDateTime.now()),
+                new SoundAndLocation(latitude,longitude,magnitude,LocalDateTime.now())
+        );
+
+        List<FeatureCollection> featureCollectionList  = new ArrayList<>();
+
+        for(int i=0; i<attempts; i++){
+                featureCollectionList.add(convertToFeatureCollection.convertToFeatureCollection(soundAndLocationList));
+        }
+
+
+        List<FeatureCollection> featureCollectionResult = new ArrayList<>();
+
+        LocalDateTime firstTime;
+        LocalDateTime secondTime;
+
+
+        for(int i=0; i<attempts; i++){
+
+            firstTime = LocalDateTime.now().minusHours(i+1);
+            secondTime = LocalDateTime.now().minusHours(i);
+
+            //given
+            given(soundAndLocationRepo.findAllByDateTimeBetween(firstTime,secondTime)).willReturn(soundAndLocationList);
+            //when
+            featureCollectionResult.add(convertToFeatureCollection.convertToFeatureCollection(soundAndLocationRepo.findAllByDateTimeBetween(firstTime,secondTime)));
+        }
+
+        //then
+        assertEquals(featureCollectionResult,featureCollectionList);
+
     }
 
     @Test
