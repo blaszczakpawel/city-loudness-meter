@@ -84,3 +84,18 @@
 	content: "100dB";
 	top: -1.5rem;
 }
+
+#notificationWrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#notificationWrapper div {
+    background-color: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 .5rem #999;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    width: 20rem;
+}

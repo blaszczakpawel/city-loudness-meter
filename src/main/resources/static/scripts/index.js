@@ -1,6 +1,8 @@
 // Source for heatmap
+let defaultUri = '../api/location/all'
+util.poke(defaultUri).catch(() => util.notify('Error loading sound data from server'))
 const source = new ol.source.Vector({
-    url: '../api/location/all',
+    url: defaultUri,
     format: new ol.format.GeoJSON()
 })
 
@@ -52,8 +54,11 @@ document.querySelectorAll('#filters input').forEach((input) => {
         }
 
         // Update source to show new filters applied
-        source.setUrl(`../api/location/all?fromDate=${timestamps[0]}&toDate=${timestamps[1]}`)
-        source.refresh()
+        let uri = `../api/location/all?fromDate=${timestamps[0]}&toDate=${timestamps[1]}`
+        util.poke(uri).then(() => {
+            source.setUrl(uri)
+            source.refresh()
+        }).catch(() => util.notify('Error loading sound data from server'))
     })
 })
 
@@ -74,8 +79,8 @@ function goToCity() {
         map.getView().setCenter(ol.proj.fromLonLat([17.036, 51.108]));
         map.getView().setZoom(15);
     } else if (!document.getElementById("city").value) {
-        alert("Select a city!");
+        util.notify('Select a city')
     } else {
-        alert("There is no data for this city yet");
+        util.notify('There is no data for given city yet')
     }
 }
