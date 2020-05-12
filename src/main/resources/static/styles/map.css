@@ -45,6 +45,7 @@
 #filters input,
 #filters span {
     width: 40%;
+    font-size: 1.2rem;
 }
 
 #filters input {
@@ -98,4 +99,46 @@
     padding: 0.5rem;
     margin: 0.5rem;
     width: 20rem;
+}
+
+@media only screen and (max-width: 576px) {
+    #map {
+        width: 100vw;
+    }
+
+    #scale {
+        top: 40vh;
+    }
+
+    #filters input {
+        font-size: 1.2rem;
+    }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 768px) {
+    #map {
+        width: 100vw;
+    }
+
+    #scale {
+        top: 30vh;
+    }
+
+    #filters input {
+        font-size: 1.2rem;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1200px) {
+    #map {
+        width: 100vw;
+    }
+
+    #scale {
+        top: 30vh;
+    }
+
+    #filters input {
+        font-size: 1.2rem;
+    }
 }

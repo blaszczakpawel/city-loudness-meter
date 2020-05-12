@@ -53,3 +53,24 @@
 [data-title] {
     position: relative;
 }
+
+@media only screen and (max-width: 576px) {
+    #panel {
+        width: 10vw;
+        z-index: 99999;
+    }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 768px) {
+    #panel {
+        width: 10vw;
+        z-index: 99999;
+    }
+  }
+  
+  @media only screen and (min-width: 768px) and (max-width: 1200px) {
+    #panel {
+        width: 6vw;
+        z-index: 99999;
+    }
+}
