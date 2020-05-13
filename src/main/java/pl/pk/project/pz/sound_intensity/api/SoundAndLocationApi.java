@@ -38,7 +38,7 @@ public class SoundAndLocationApi {
     }
 
     @PostMapping(consumes = (MediaType.APPLICATION_JSON_VALUE))
-    public ResponseEntity<Void> addNewPoint(@Valid @RequestBody SoundAndLocation soundAndLocation) throws Exception{
+    public ResponseEntity<Void> addNewPoint( @RequestBody List<@Valid SoundAndLocation> soundAndLocation) throws Exception{
         soundAndLocationManager.save(soundAndLocation);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }

@@ -6,7 +6,7 @@ target/
 
 ### DataBase ###
 *.db
-
+bazaDanych.mv.db
 
 ### STS ###
 .apt_generated

@@ -1,5 +1,6 @@
 package pl.pk.project.pz.sound_intensity.manager;
 
+import net.bytebuddy.implementation.bytecode.Throw;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pl.pk.project.pz.sound_intensity.dao.SoundAndLocationRepo;
@@ -8,11 +9,16 @@ import pl.pk.project.pz.sound_intensity.pojo.FeatureCollection;
 import pl.pk.project.pz.sound_intensity.pojo.convert.convertToFeatureCollection;
 
 
+import javax.validation.ConstraintViolation;
+import javax.validation.Validation;
+import javax.validation.ValidationException;
+import javax.validation.Validator;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 @Service
 public class SoundAndLocationManager {
@@ -32,8 +38,20 @@ public class SoundAndLocationManager {
         return convertToFeatureCollection.convertToFeatureCollection(soundAndLocationRepo.findAll());
     }
 
-    public SoundAndLocation save(SoundAndLocation soundAndLocation){
-        return  soundAndLocationRepo.save(soundAndLocation);
+    public void save(List<SoundAndLocation> soundAndLocation){
+        Validator validator = Validation.buildDefaultValidatorFactory().getValidator();
+        for (SoundAndLocation s:soundAndLocation) {
+            Set<ConstraintViolation<SoundAndLocation>> validatorErrors = validator.validate(s);
+            for (ConstraintViolation<SoundAndLocation> validatorError: validatorErrors) {
+                throw new ValidationException(validatorError.getPropertyPath().toString() + " " + validatorError.getMessage());
+            }
+        }
+        for (SoundAndLocation s:soundAndLocation
+             ) {
+            soundAndLocationRepo.save(s);
+
+        }
+
     }
 
     public void deleteById(Long id){
