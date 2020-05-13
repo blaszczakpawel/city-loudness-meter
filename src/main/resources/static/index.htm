@@ -11,35 +11,36 @@
 <link rel="stylesheet" type="text/css" href="styles/menu.css">
 
 <script> menu(); </script>
-<aside>
-	<div id="searchBar">
-		<input id="city" placeholder="Find your city" list="cities" autocomplete="off">
-		<datalist id="cities">
-			<option value="Katowice">
-			<option value="Kraków">
-			<option value="Poznań">
-			<option value="Warszawa">
-			<option value="Wrocław">
-		</datalist>
-		<button type="button" onclick="goToCity()"><img src="assets/search.svg"></button>
+<div id="map">
+	<div id="search">
+		<noscript>
+			For full functionality of this site it is necessary to enable JavaScript.
+			Here are the <a href="https://www.enable-javascript.com/">
+			instructions how to enable JavaScript in your web browser</a>.
+		</noscript>
+		<div id="searchBar">
+			<input id="city" placeholder="Find your city" list="cities" autocomplete="off">
+			<datalist id="cities">
+				<option value="Katowice">
+				<option value="Kraków">
+				<option value="Poznań">
+				<option value="Warszawa">
+				<option value="Wrocław">
+			</datalist>
+			<button type="button" onclick="goToCity()"><img src="assets/search.svg"></button>
+		</div>
+		<div id="filters">
+			<div>
+				<span>From:</span><span>To:</span>
+			</div>
+			<div>
+				<input type="date" data-range-pos="0"> — <input type="date" data-range-pos="1">
+			</div>
+			<div>
+				<input type="time" data-range-pos="0"> — <input type="time" data-range-pos="1">
+			</div>
+		</div>
 	</div>
-	<div id="filters">
-		<div>
-			<span>From:</span><span>To:</span>
-		</div>
-		<div>
-			<input type="date" data-range-pos="0"> — <input type="date" data-range-pos="1">
-		</div>
-		<div>
-			<input type="time" data-range-pos="0"> — <input type="time" data-range-pos="1">
-		</div>
-	</div>
-	<noscript>
-		For full functionality of this site it is necessary to enable JavaScript.
-		Here are the <a href="https://www.enable-javascript.com/">
-		instructions how to enable JavaScript in your web browser</a>.
-	</noscript>
-</aside>
-<div id="map"></div>
+</div>
 <div id="scale"></div>
 <div id="notificationWrapper"></div>

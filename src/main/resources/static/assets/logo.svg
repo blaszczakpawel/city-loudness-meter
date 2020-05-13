@@ -1,0 +1,162 @@
+<svg id="Component_8_1" data-name="Component 8 – 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 29 21.5">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#ff9100"/>
+      <stop offset="0.7" stop-color="#ffbe00"/>
+      <stop offset="1" stop-color="#fe0"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#f50"/>
+      <stop offset="0.644" stop-color="#ff7200"/>
+      <stop offset="1" stop-color="#ff9100"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-3" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="red"/>
+      <stop offset="0.628" stop-color="#ff2c00"/>
+      <stop offset="1" stop-color="#f50"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-4" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#00ff5d"/>
+      <stop offset="0.912" stop-color="#00c8b4"/>
+      <stop offset="1" stop-color="#09f"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-5" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fe0"/>
+      <stop offset="0.731" stop-color="#f4ef04"/>
+      <stop offset="0.96" stop-color="#77f732"/>
+      <stop offset="1" stop-color="#00ff5d"/>
+    </linearGradient>
+  </defs>
+  <rect id="Rectangle_2" data-name="Rectangle 2" width="4" height="1.5" transform="translate(15 10)" fill="#09f"/>
+  <rect id="Rectangle_1" data-name="Rectangle 1" width="3" height="0.5" transform="translate(15.5 10.5)" fill="#fff"/>
+  <g id="Component_4_1" data-name="Component 4 – 1" transform="translate(15 4)">
+    <rect id="Rectangle_2-2" data-name="Rectangle 2" width="4" height="1.5" fill="url(#linear-gradient)"/>
+    <rect id="Rectangle_1-2" data-name="Rectangle 1" width="3" height="0.5" transform="translate(0.5 0.5)" fill="#fff"/>
+  </g>
+  <g id="Component_6_1" data-name="Component 6 – 1" transform="translate(15 2)">
+    <rect id="Rectangle_2-3" data-name="Rectangle 2" width="4" height="1.5" fill="url(#linear-gradient-2)"/>
+    <rect id="Rectangle_1-3" data-name="Rectangle 1" width="3" height="0.5" transform="translate(0.5 0.5)" fill="#fff"/>
+  </g>
+  <g id="Component_5_1" data-name="Component 5 – 1" transform="translate(15)">
+    <rect id="Rectangle_2-4" data-name="Rectangle 2" width="4" height="1.5" fill="url(#linear-gradient-3)"/>
+    <rect id="Rectangle_1-4" data-name="Rectangle 1" width="3" height="0.5" transform="translate(0.5 0.5)" fill="#fff"/>
+  </g>
+  <rect id="Rectangle_2-5" data-name="Rectangle 2" width="4" height="1.5" transform="translate(20 10)" fill="#09f"/>
+  <rect id="Rectangle_1-5" data-name="Rectangle 1" width="3" height="0.5" transform="translate(20.5 10.5)" fill="#fff"/>
+  <rect id="Rectangle_2-6" data-name="Rectangle 2" width="4" height="1.5" transform="translate(10 10)" fill="#09f"/>
+  <rect id="Rectangle_1-6" data-name="Rectangle 1" width="3" height="0.5" transform="translate(10.5 10.5)" fill="#fff"/>
+  <rect id="Rectangle_2-7" data-name="Rectangle 2" width="4" height="1.5" transform="translate(5 10)" fill="#09f"/>
+  <rect id="Rectangle_1-7" data-name="Rectangle 1" width="3" height="0.5" transform="translate(5.5 10.5)" fill="#fff"/>
+  <rect id="Rectangle_2-8" data-name="Rectangle 2" width="4" height="1.5" transform="translate(25 10)" fill="#09f"/>
+  <rect id="Rectangle_1-8" data-name="Rectangle 1" width="3" height="0.5" transform="translate(25.5 10.5)" fill="#fff"/>
+  <rect id="Rectangle_2-9" data-name="Rectangle 2" width="4" height="1.5" transform="translate(0 10)" fill="#09f"/>
+  <rect id="Rectangle_1-9" data-name="Rectangle 1" width="3" height="0.5" transform="translate(0.5 10.5)" fill="#fff"/>
+  <g id="Component_2_1" data-name="Component 2 – 1" transform="translate(0 8)">
+    <rect id="Rectangle_2-10" data-name="Rectangle 2" width="4" height="1.5" fill="url(#linear-gradient-4)"/>
+    <rect id="Rectangle_1-10" data-name="Rectangle 1" width="3" height="0.5" transform="translate(0.5 0.5)" fill="#fff"/>
+  </g>
+  <g id="Component_3_1" data-name="Component 3 – 1" transform="translate(25 6)">
+    <rect id="Rectangle_2-11" data-name="Rectangle 2" width="4" height="1.5" fill="url(#linear-gradient-5)"/>
+    <rect id="Rectangle_1-11" data-name="Rectangle 1" width="3" height="0.5" transform="translate(0.5 0.5)" fill="#fff"/>
+  </g>
+  <g id="Component_2_2" data-name="Component 2 – 2" transform="translate(5 8)">
+    <rect id="Rectangle_2-12" data-name="Rectangle 2" width="4" height="1.5" fill="url(#linear-gradient-4)"/>
+    <rect id="Rectangle_1-12" data-name="Rectangle 1" width="3" height="0.5" transform="translate(0.5 0.5)" fill="#fff"/>
+  </g>
+  <g id="Component_2_3" data-name="Component 2 – 3" transform="translate(10 8)">
+    <rect id="Rectangle_2-13" data-name="Rectangle 2" width="4" height="1.5" fill="url(#linear-gradient-4)"/>
+    <rect id="Rectangle_1-13" data-name="Rectangle 1" width="3" height="0.5" transform="translate(0.5 0.5)" fill="#fff"/>
+  </g>
+  <g id="Component_2_4" data-name="Component 2 – 4" transform="translate(15 8)">
+    <rect id="Rectangle_2-14" data-name="Rectangle 2" width="4" height="1.5" fill="url(#linear-gradient-4)"/>
+    <rect id="Rectangle_1-14" data-name="Rectangle 1" width="3" height="0.5" transform="translate(0.5 0.5)" fill="#fff"/>
+  </g>
+  <g id="Component_2_5" data-name="Component 2 – 5" transform="translate(20 8)">
+    <rect id="Rectangle_2-15" data-name="Rectangle 2" width="4" height="1.5" fill="url(#linear-gradient-4)"/>
+    <rect id="Rectangle_1-15" data-name="Rectangle 1" width="3" height="0.5" transform="translate(0.5 0.5)" fill="#fff"/>
+  </g>
+  <g id="Component_2_6" data-name="Component 2 – 6" transform="translate(25 8)">
+    <rect id="Rectangle_2-16" data-name="Rectangle 2" width="4" height="1.5" fill="url(#linear-gradient-4)"/>
+    <rect id="Rectangle_1-16" data-name="Rectangle 1" width="3" height="0.5" transform="translate(0.5 0.5)" fill="#fff"/>
+  </g>
+  <g id="Component_2_7" data-name="Component 2 – 7" transform="translate(4 13.5) rotate(180)">
+    <rect id="Rectangle_2-17" data-name="Rectangle 2" width="4" height="1.5" fill="url(#linear-gradient-4)"/>
+    <rect id="Rectangle_1-17" data-name="Rectangle 1" width="3" height="0.5" transform="translate(0.5 0.5)" fill="#fff"/>
+  </g>
+  <g id="Component_2_8" data-name="Component 2 – 8" transform="translate(9 13.5) rotate(180)">
+    <rect id="Rectangle_2-18" data-name="Rectangle 2" width="4" height="1.5" fill="url(#linear-gradient-4)"/>
+    <rect id="Rectangle_1-18" data-name="Rectangle 1" width="3" height="0.5" transform="translate(0.5 0.5)" fill="#fff"/>
+  </g>
+  <g id="Component_2_9" data-name="Component 2 – 9" transform="translate(14 13.5) rotate(180)">
+    <rect id="Rectangle_2-19" data-name="Rectangle 2" width="4" height="1.5" fill="url(#linear-gradient-4)"/>
+    <rect id="Rectangle_1-19" data-name="Rectangle 1" width="3" height="0.5" transform="translate(0.5 0.5)" fill="#fff"/>
+  </g>
+  <g id="Component_2_10" data-name="Component 2 – 10" transform="translate(19 13.5) rotate(180)">
+    <rect id="Rectangle_2-20" data-name="Rectangle 2" width="4" height="1.5" fill="url(#linear-gradient-4)"/>
+    <rect id="Rectangle_1-20" data-name="Rectangle 1" width="3" height="0.5" transform="translate(0.5 0.5)" fill="#fff"/>
+  </g>
+  <g id="Component_2_11" data-name="Component 2 – 11" transform="translate(24 13.5) rotate(180)">
+    <rect id="Rectangle_2-21" data-name="Rectangle 2" width="4" height="1.5" fill="url(#linear-gradient-4)"/>
+    <rect id="Rectangle_1-21" data-name="Rectangle 1" width="3" height="0.5" transform="translate(0.5 0.5)" fill="#fff"/>
+  </g>
+  <g id="Component_2_12" data-name="Component 2 – 12" transform="translate(29 13.5) rotate(180)">
+    <rect id="Rectangle_2-22" data-name="Rectangle 2" width="4" height="1.5" fill="url(#linear-gradient-4)"/>
+    <rect id="Rectangle_1-22" data-name="Rectangle 1" width="3" height="0.5" transform="translate(0.5 0.5)" fill="#fff"/>
+  </g>
+  <g id="Component_3_2" data-name="Component 3 – 2" transform="translate(15 6)">
+    <rect id="Rectangle_2-23" data-name="Rectangle 2" width="4" height="1.5" fill="url(#linear-gradient-5)"/>
+    <rect id="Rectangle_1-23" data-name="Rectangle 1" width="3" height="0.5" transform="translate(0.5 0.5)" fill="#fff"/>
+  </g>
+  <g id="Component_3_3" data-name="Component 3 – 3" transform="translate(10 6)">
+    <rect id="Rectangle_2-24" data-name="Rectangle 2" width="4" height="1.5" fill="url(#linear-gradient-5)"/>
+    <rect id="Rectangle_1-24" data-name="Rectangle 1" width="3" height="0.5" transform="translate(0.5 0.5)" fill="#fff"/>
+  </g>
+  <g id="Component_3_4" data-name="Component 3 – 4" transform="translate(0 6)">
+    <rect id="Rectangle_2-25" data-name="Rectangle 2" width="4" height="1.5" fill="url(#linear-gradient-5)"/>
+    <rect id="Rectangle_1-25" data-name="Rectangle 1" width="3" height="0.5" transform="translate(0.5 0.5)" fill="#fff"/>
+  </g>
+  <g id="Component_3_5" data-name="Component 3 – 5" transform="translate(4 15.5) rotate(180)">
+    <rect id="Rectangle_2-26" data-name="Rectangle 2" width="4" height="1.5" fill="url(#linear-gradient-5)"/>
+    <rect id="Rectangle_1-26" data-name="Rectangle 1" width="3" height="0.5" transform="translate(0.5 0.5)" fill="#fff"/>
+  </g>
+  <g id="Component_3_7" data-name="Component 3 – 7" transform="translate(14 15.5) rotate(180)">
+    <rect id="Rectangle_2-27" data-name="Rectangle 2" width="4" height="1.5" fill="url(#linear-gradient-5)"/>
+    <rect id="Rectangle_1-27" data-name="Rectangle 1" width="3" height="0.5" transform="translate(0.5 0.5)" fill="#fff"/>
+  </g>
+  <g id="Component_3_8" data-name="Component 3 – 8" transform="translate(19 15.5) rotate(180)">
+    <rect id="Rectangle_2-28" data-name="Rectangle 2" width="4" height="1.5" fill="url(#linear-gradient-5)"/>
+    <rect id="Rectangle_1-28" data-name="Rectangle 1" width="3" height="0.5" transform="translate(0.5 0.5)" fill="#fff"/>
+  </g>
+  <g id="Component_3_10" data-name="Component 3 – 10" transform="translate(29 15.5) rotate(180)">
+    <rect id="Rectangle_2-29" data-name="Rectangle 2" width="4" height="1.5" fill="url(#linear-gradient-5)"/>
+    <rect id="Rectangle_1-29" data-name="Rectangle 1" width="3" height="0.5" transform="translate(0.5 0.5)" fill="#fff"/>
+  </g>
+  <g id="Component_4_2" data-name="Component 4 – 2" transform="translate(10 4)">
+    <rect id="Rectangle_2-30" data-name="Rectangle 2" width="4" height="1.5" fill="url(#linear-gradient)"/>
+    <rect id="Rectangle_1-30" data-name="Rectangle 1" width="3" height="0.5" transform="translate(0.5 0.5)" fill="#fff"/>
+  </g>
+  <g id="Component_4_3" data-name="Component 4 – 3" transform="translate(0 4)">
+    <rect id="Rectangle_2-31" data-name="Rectangle 2" width="4" height="1.5" fill="url(#linear-gradient)"/>
+    <rect id="Rectangle_1-31" data-name="Rectangle 1" width="3" height="0.5" transform="translate(0.5 0.5)" fill="#fff"/>
+  </g>
+  <g id="Component_4_4" data-name="Component 4 – 4" transform="translate(19 17.5) rotate(180)">
+    <rect id="Rectangle_2-32" data-name="Rectangle 2" width="4" height="1.5" fill="url(#linear-gradient)"/>
+    <rect id="Rectangle_1-32" data-name="Rectangle 1" width="3" height="0.5" transform="translate(0.5 0.5)" fill="#fff"/>
+  </g>
+  <g id="Component_4_5" data-name="Component 4 – 5" transform="translate(14 17.5) rotate(180)">
+    <rect id="Rectangle_2-33" data-name="Rectangle 2" width="4" height="1.5" fill="url(#linear-gradient)"/>
+    <rect id="Rectangle_1-33" data-name="Rectangle 1" width="3" height="0.5" transform="translate(0.5 0.5)" fill="#fff"/>
+  </g>
+  <g id="Component_4_6" data-name="Component 4 – 6" transform="translate(4 17.5) rotate(180)">
+    <rect id="Rectangle_2-34" data-name="Rectangle 2" width="4" height="1.5" fill="url(#linear-gradient)"/>
+    <rect id="Rectangle_1-34" data-name="Rectangle 1" width="3" height="0.5" transform="translate(0.5 0.5)" fill="#fff"/>
+  </g>
+  <g id="Component_5_2" data-name="Component 5 – 2" transform="translate(19 21.5) rotate(180)">
+    <rect id="Rectangle_2-35" data-name="Rectangle 2" width="4" height="1.5" fill="url(#linear-gradient-3)"/>
+    <rect id="Rectangle_1-35" data-name="Rectangle 1" width="3" height="0.5" transform="translate(0.5 0.5)" fill="#fff"/>
+  </g>
+  <g id="Component_6_2" data-name="Component 6 – 2" transform="translate(19 19.5) rotate(180)">
+    <rect id="Rectangle_2-36" data-name="Rectangle 2" width="4" height="1.5" fill="url(#linear-gradient-2)"/>
+    <rect id="Rectangle_1-36" data-name="Rectangle 1" width="3" height="0.5" transform="translate(0.5 0.5)" fill="#fff"/>
+  </g>
+</svg>

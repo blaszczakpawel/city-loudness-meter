@@ -9,10 +9,10 @@ body {
 }
 
 aside {
-	width: 25vw;
-    padding: 2vw 2vw 2vw 6vw;
-    margin: 0;
-    box-sizing: border-box;
+	width: 20vw;
+	padding: 1em;
+	position: relative;
+	box-sizing: border-box;
 	height: 100vh;
 }
 
