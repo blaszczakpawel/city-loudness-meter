@@ -1,0 +1,104 @@
+@media only screen and (max-width: 576px) {
+    /* master.css */
+    
+    body {
+		flex-direction: column;
+	}
+
+	aside {
+		width: 90vw;
+		padding: 4vw 2vw 2vw 14vw;
+		height: auto;
+    }
+
+    /* menu.css */
+    
+    #panel {
+        width: 10vw;
+        z-index: 99999;
+    }
+
+    /* map.css */
+
+    #map {
+        width: 100vw;
+    }
+
+    #scale {
+        top: 40vh;
+    }
+
+    #filters input {
+        font-size: 1.2rem;
+    }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 768px) {
+    /* master.css */
+
+    body {
+		flex-direction: column;
+	}
+
+    /* menu.css */
+
+	aside {
+		width: 90vw;
+		padding: 4vw 2vw 2vw 14vw;
+		height: auto;
+    }
+    
+    #panel {
+        width: 10vw;
+        z-index: 99999;
+    }
+
+    /* map.css */
+
+    #map {
+        width: 100vw;
+    }
+
+    #scale {
+        top: 30vh;
+    }
+
+    #filters input {
+        font-size: 1.2rem;
+    }
+  }
+
+  @media only screen and (min-width: 768px) and (max-width: 1200px) {
+    /* master.css */
+
+    body {
+		flex-direction: column;
+    }
+
+    /* menu.css */
+
+    aside {
+		width: 94vw;
+		padding: 4vw 2vw 2vw 14vw;
+		height: auto;
+    }
+
+    #panel {
+        width: 6vw;
+        z-index: 99999;
+    }
+
+    /* map.css */
+
+    #map {
+        width: 100vw;
+    }
+
+    #scale {
+        top: 30vh;
+    }
+
+    #filters input {
+        font-size: 1.2rem;
+    }
+}

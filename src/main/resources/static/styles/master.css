@@ -25,39 +25,3 @@ a:hover {
 	color: #4872a7;
 	text-decoration: underline;
 }
-
-@media only screen and (max-width: 576px) {
-    body {
-		flex-direction: column;
-	}
-
-	aside {
-		width: 90vw;
-		padding: 6vw 2vw 4vw 12vw;
-		height: 35vh;
-	}
-}
-
-@media only screen and (min-width: 576px) and (max-width: 768px) {
-	body {
-		flex-direction: column;
-	}
-
-	aside {
-		width: 90vw;
-		padding: 6vw 2vw 4vw 12vw;
-		height: 25vh;
-	}
-  }
-
-  @media only screen and (min-width: 768px) and (max-width: 1200px) {
-    body {
-		flex-direction: column;
-    }
-
-    aside {
-		width: 94vw;
-		padding: 4vw 2vw 6vw 12vw;
-		height: 20vh;
-    }
-}
