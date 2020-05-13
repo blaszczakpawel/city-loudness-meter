@@ -1,0 +1,76 @@
+@media only screen and (max-width: 1200px) {
+    /* master.css */
+    
+    body {
+		flex-direction: column;
+	}
+
+	aside {
+		width: 100vw;
+        height: auto;
+        padding: 1vw 1vw 1vw 4vw;
+    }
+
+    main {
+        padding: 0.5rem;
+        margin-right: 1rem;
+        margin-left: 1rem;
+    }
+
+    h1 {
+        letter-spacing: 0.12rem;
+        text-align: center;
+    }
+
+    h2 {
+        color: gray;
+    }
+
+    ul {
+        list-style: none;
+        color: white;
+        padding: 0;
+    }
+
+    a:hover {
+        color: tomato;
+        text-decoration: none;
+    }
+
+    /* .fas {
+        color: white;
+    } */
+}
+
+@media only screen and (min-width: 1200px) {
+    aside {
+		font-size: 1.3rem;
+        padding: 1vw 1vw 1vw 1vw;
+    }
+
+    main {
+        padding: 0.5rem;
+        font-size: 1.2rem;
+        margin-right: 2rem;
+    }
+
+    h1 {
+        letter-spacing: 0.12rem;
+        text-align: center;
+    }
+
+    h2 {
+        color: gray;
+    }
+
+    ul {
+        list-style: none;
+        color: white;
+        padding: 0;
+    }
+
+    a:hover {
+        color: tomato;
+        text-decoration: none;
+    }
+}
