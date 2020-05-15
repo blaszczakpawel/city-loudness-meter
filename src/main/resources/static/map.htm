@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>city-loudness-meter</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.3.0/css/ol.css" type="text/css">
+<script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.3.0/build/ol.js"></script>
+<script src="scripts/util.js"></script>
+<script src="scripts/map.js" defer></script>
+<link rel="stylesheet" type="text/css" href="styles/master.css">
+<link rel="stylesheet" type="text/css" href="styles/map.css">
+<noscript>
+	<div id="noscript">
+		For full functionality of this site it is necessary to enable JavaScript.
+		Here are the <a href="https://www.enable-javascript.com/" target="_blank">
+		instructions how to enable JavaScript in your web browser</a>.
+	</div>
+</noscript>
+<div id="map"></div>
+<div id="search">
+	<div id="searchBar">
+		<input placeholder="Find your city" list="cities" autocomplete="off">
+		<datalist id="cities">
+			<option value="Katowice">
+			<option value="Kraków">
+			<option value="Poznań">
+			<option value="Warszawa">
+			<option value="Wrocław">
+		</datalist>
+		<button type="button">
+			<img src="assets/search.svg">
+		</button>
+	</div>
+	<div id="filters">
+		<div>
+			<span>From:</span><span>To:</span>
+		</div>
+		<div>
+			<input type="date" data-range-pos="0"> — <input type="date" data-range-pos="1">
+		</div>
+		<div>
+			<input type="time" data-range-pos="0"> — <input type="time" data-range-pos="1">
+		</div>
+	</div>
+</div>
+<div id="scale"></div>
+<div id="notificationWrapper"></div>
+

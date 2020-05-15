@@ -10,6 +10,11 @@ public class FrontController {
 	public String returnIndex() {
 		return "index";
 	}
+
+	@GetMapping("/map")
+	public String returnMap() {
+		return "map";
+	}
 	
 	@GetMapping("/about")
 	public String returnAbout() {

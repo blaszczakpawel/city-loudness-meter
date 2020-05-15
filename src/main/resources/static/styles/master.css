@@ -1,3 +1,12 @@
+:root {
+	--background-color: #eee;
+	--accent-color: #003366;
+	--text-color: #000;
+	--text-placeholder-color: #ccc;
+	--text-alternative-color: #e8e8e8;
+	--shadow: 0 0 .5rem #999;
+}
+
 html {
 	scroll-behavior: smooth;
 }
@@ -8,14 +17,6 @@ body {
 	font-family: "Noto Sans", "Lucida Grande", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
-aside {
-	width: 20vw;
-	padding: 1em;
-	position: relative;
-	box-sizing: border-box;
-	height: 100vh;
-}
-
 a {
 	color: #7694ba;
 	text-decoration: none;
@@ -24,4 +25,9 @@ a {
 a:hover {
 	color: #4872a7;
 	text-decoration: underline;
+}
+
+iframe {
+	width: 100%;
+	border: none;
 }

@@ -31,5 +31,10 @@ const util = {
 			clearTimeout(timeout)
 		})
 
+	},
+
+	// Parses data and time string to timestamp
+	parseToTimestamp: (date, time = '00:00') => {
+		return Date.parse(`${date} ${time}`, 'yyyy-MM-dd HH:mm')
 	}
 }
