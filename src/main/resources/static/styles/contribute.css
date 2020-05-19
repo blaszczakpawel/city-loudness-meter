@@ -1,0 +1,62 @@
+body {
+	background-image: linear-gradient(to right, #ddd , #fff);
+	margin: 0;
+    display: flex;
+
+	font-family: "Noto Sans", "Lucida Grande", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+main{
+    padding-bottom: 5em;
+    cursor: pointer;
+}
+
+a {
+	color: #7694ba;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #4872a7;
+	text-decoration: underline;
+}
+h1{
+	text-align: center;
+    color: #45789a;
+
+}
+
+.img-galaxy
+{
+	margin: 1em 0 1em 0;
+    width:100%;
+    position:static;
+
+}
+
+#get_app p
+{
+position:absolute;
+text-align: center;
+font-size: 50px;
+color:  #800000;
+padding: 400px 0px 150px 80px ;
+font-weight: bold;
+font-family: 'Anton', sans-serif;
+}
+
+button
+{
+position:absolute;
+top : 620px;
+left: 200px;
+font-size: 20px;
+width:200px;
+height:80px;
+border-radius:20px;
+font-weight: bold;
+background-color: 	#E5E4E2;
+box-shadow: 10px 10px 5px black;
+font-family: 'Abril Fatface', cursive;
+
+}
