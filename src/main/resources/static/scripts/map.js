@@ -1,6 +1,7 @@
 // Update map when filters change
 function changeDateFiltersHandler(event) {
 	let timestamps = []
+	let input = event.target
 
 	// On one date range side change, set other side to be the same if not set
 	if (input.type == 'date') {
