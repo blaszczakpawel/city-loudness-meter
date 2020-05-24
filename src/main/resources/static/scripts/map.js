@@ -1,19 +1,24 @@
+const LOCATION_API_PREFIX = '../api/location'
+
 // Update map when filters change
-function changeDateFiltersHandler(event) {
+function changeDateFiltersHandler(event = null) {
 	let timestamps = []
-	let input = event.target
 
-	// On one date range side change, set other side to be the same if not set
-	if (input.type == 'date') {
-		let other = document.querySelector(`#filters [type="date"][data-range-pos="${(parseInt(input.dataset.rangePos) + 1) % 2}"]`)
+	if (event !== null) {
+		let input = event.target
 
-		if (other.value == '') {
-			other.value = input.value
+		// On one date range side change, set other side to be the same if not set
+		if (input.type == 'date') {
+			let other = document.querySelector(`#filters [type="date"][data-range-pos="${(parseInt(input.dataset.rangePos) + 1) % 2}"]`)
+
+			if (other.value == '') {
+				other.value = input.value
+			}
 		}
 	}
 
 	// Parse input values to timestamps
-	for (let i in [0, 1]) {
+	for (let i of [0, 1]) {
 		timestamps[i] = util.parseToTimestamp(
 			document.querySelector(`#filters [type="date"][data-range-pos="${i}"]`).value || undefined,
 			document.querySelector(`#filters [type="time"][data-range-pos="${i}"]`).value || undefined
@@ -21,11 +26,7 @@ function changeDateFiltersHandler(event) {
 	}
 
 	// Update source to show new filters applied
-	let uri = `../api/location/all?fromDate=${timestamps[0]}&toDate=${timestamps[1]}`
-	util.poke(uri).then(() => {
-		source.setUrl(uri)
-		source.refresh()
-	}).catch(() => util.notify('Error loading sound data from server'))
+	updateHeatmapSource(`/all?fromDate=${timestamps[0]}&toDate=${timestamps[1]}`)
 }
 
 // Focus on city
@@ -50,10 +51,7 @@ function findCityHandler(event) {
 }
 
 // Source for heatmap
-let defaultUri = '../api/location/all'
-util.poke(defaultUri).catch(() => util.notify('Error loading sound data from server'))
 const source = new ol.source.Vector({
-	url: defaultUri,
 	format: new ol.format.GeoJSON()
 })
 
@@ -77,6 +75,33 @@ const map = new ol.Map({
 	})
 })
 
+function updateHeatmapSource(uri) {
+	uri = LOCATION_API_PREFIX + uri
+
+	util.poke(uri)
+		.then(() => {
+			source.setUrl(uri)
+			source.refresh()
+		}).catch(() => {
+			util.notify('Error loading sound data from server')
+		})
+}
+
+function setDefaultFilters() {
+	let now = new Date()
+	now.setSeconds(0, 0)
+	let hourAgo = new Date()
+	hourAgo.setHours(hourAgo.getHours() - 1, hourAgo.getMinutes(), 0, 0)
+
+	for (let pos of [0, 1]) {
+		for (let t of ['date', 'time']) {
+			document.querySelector(`#filters [type="${t}"][data-range-pos="${pos}"]`).valueAsDate = pos ? now : hourAgo
+		}
+	}
+
+	changeDateFiltersHandler()
+}
+
 document.querySelectorAll('#filters input').forEach((input) => {
 	input.addEventListener('change', changeDateFiltersHandler)
 })
@@ -88,3 +113,5 @@ document.querySelector('#searchBar input').addEventListener('keypress', (event) 
 })
 
 document.querySelector('#searchBar button').addEventListener('click', findCityHandler)
+
+setDefaultFilters()
