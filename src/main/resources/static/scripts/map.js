@@ -1,4 +1,34 @@
-const LOCATION_API_PREFIX = '../api/location'
+const heatmapSource = {
+	uri: new URL('/api/location/all', location.origin),
+	source: new ol.source.Vector({
+		format: new ol.format.GeoJSON()
+	}),
+
+	update: function(params) {
+		let getParams = this.uri.searchParams
+		
+		for (let key in params) {
+			if (['fromDate', 'toDate', 'topLeft', 'bottomRight'].includes(key)) {
+				getParams.set(key, params[key])
+			}
+		}
+
+		this.uri.search = getParams.toString()
+		this.apply()
+	},
+
+	apply: function() {
+		let uriString = this.uri.toString()
+
+		util.poke(uriString)
+			.then(() => {
+				this.source.setUrl(uriString)
+				this.source.refresh()
+			}).catch(() => {
+				util.notify('Error loading sound data from server')
+			})
+	}
+}
 
 // Update map when filters change
 function changeDateFiltersHandler(event = null) {
@@ -26,7 +56,7 @@ function changeDateFiltersHandler(event = null) {
 	}
 
 	// Update source to show new filters applied
-	updateHeatmapSource(`/all?fromDate=${timestamps[0]}&toDate=${timestamps[1]}`)
+	heatmapSource.update({fromDate: timestamps[0], toDate: timestamps[1]})
 }
 
 // Focus on city
@@ -43,20 +73,27 @@ function findCityHandler(event) {
 	if (selected === '') {
 		util.notify('Select a city')
 	} else if (selected in coordsDic) {
-		map.getView().setCenter(ol.proj.fromLonLat(coordsDic[selected]));
-		map.getView().setZoom(15);
+		map.getView().setCenter(ol.proj.fromLonLat(coordsDic[selected]))
+		map.getView().setZoom(15)
+
+		updateBounds()
 	} else {
 		util.notify('There is no data for given city yet')
 	}
 }
 
-// Source for heatmap
-const source = new ol.source.Vector({
-	format: new ol.format.GeoJSON()
-})
+function updateBounds() {
+	let extent = ol.proj.transformExtent(
+		map.getView().calculateExtent(map.getSize()),
+		'EPSG:3857',
+		'EPSG:4326'
+	)
+
+	heatmapSource.update({topLeft: `${extent[0]},${extent[3]}`, bottomRight: `${extent[2]},${extent[1]}`})
+}
 
 const heatmap = new ol.layer.Heatmap({
-	source,
+	source: heatmapSource.source,
 	blur: 25,
 	radius: 25,
 	weight: (feature) => feature.get('magnitude') / 100
@@ -74,18 +111,6 @@ const map = new ol.Map({
 		zoom: 15
 	})
 })
-
-function updateHeatmapSource(uri) {
-	uri = LOCATION_API_PREFIX + uri
-
-	util.poke(uri)
-		.then(() => {
-			source.setUrl(uri)
-			source.refresh()
-		}).catch(() => {
-			util.notify('Error loading sound data from server')
-		})
-}
 
 function setDefaultFilters() {
 	let now = new Date()
@@ -115,3 +140,4 @@ document.querySelector('#searchBar input').addEventListener('keypress', (event) 
 document.querySelector('#searchBar button').addEventListener('click', findCityHandler)
 
 setDefaultFilters()
+updateBounds()
