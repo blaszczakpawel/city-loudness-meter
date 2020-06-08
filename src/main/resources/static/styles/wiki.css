@@ -22,6 +22,22 @@ pre code {
 	padding: 1em;
 }
 
+iframe {
+	width: 50vw;
+}
+
+.listLv2 {
+	margin-left: 2rem;
+}
+
+.secondaryList {
+	color: #1a936f;
+}
+
+.secondaryList li {
+	border-bottom: 0.1rem dotted #c6dabf;
+}
+
 /* Media queries */
 
 @media only screen and (max-width: 1200px) {
@@ -52,22 +68,12 @@ pre code {
 
 	ul {
 		list-style: none;
-		color: #1a936f;
 		padding: 0;
 	}
 
 	li {
 		border-bottom: 0.1rem dotted #c6dabf;
 		padding-top: 0.5rem;
-	}
-
-	a {
-		color: #c6dabf;
-	}
-
-	a:hover {
-		color: #f1faee;
-		text-decoration: none;
 	}
 }
 
@@ -95,21 +101,10 @@ pre code {
 
 	ul {
 		list-style: none;
-		color: #1a936f;
 		padding: 0;
 	}
 
 	li {
-		border-bottom: 0.1rem dotted #c6dabf;
 		padding-top: 0.5rem;
-	}
-
-	a {
-		color: #c6dabf;
-	}
-
-	a:hover {
-		color: #f1faee;
-		text-decoration: none;
 	}
 }

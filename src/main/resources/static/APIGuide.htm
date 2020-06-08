@@ -5,23 +5,41 @@
 <link rel="stylesheet" type="text/css" href="styles/master.css">
 <link rel="stylesheet" type="text/css" href="styles/wiki.css">
 <aside>
+	<h1>Documentation</h1>
 	<ul>
-		<li><a href="#forYourWebsite">city-loudness-meter for your website</a>
-			<ul>
-				<li><a href="#frame">frame</a>
+		<li>
+			Add our map to your website
+			<ul class="listLv2">
+				<li><a href="#frame">Frame</a>
 			</ul>
-		<li><a href="#publicAPIRoutes">Public API routes</a>
-			<ul>
+		<li>
+			Public API routes
+			<ul class="listLv2">
 				<li><a href="#location/all">location/all</a>
+			</ul>
+		<li>
+			FAQ
+			<ul class="listLv2">
+				<li><a href="#mapImplementation">Map implementation</a>
+				<li><a href="#opensource">Open sources</a>
 			</ul>
 	</ul>
 </aside>
 <main>
-	<h2><a name="forYourWebsite"></a>city-loudness-meter for your website</h2>
+	<h2>Add our loudness map to your website</h2>
 	<h3><a name="frame"></a>Frame</h3>
 	<p>
-		To-do.
-	<h2><a name="publicAPIRoutes"></a>Public API routes</h2>
+		To build City Loudness Meter into your site, add this code onto the page:
+	<pre>
+		<code>
+&lt;iframe src="<span data-here></span>/map" width="600" height="300"&gt;&lt;/iframe&gt;
+		</code>
+	</pre>
+	<p>
+		It will look like this:
+	</p>
+	<iframe src="../map" name="map-frame" width="600" height="300"></iframe>
+	<h2>Public API routes</h2>
 	<h3><a name="location/all"></a><span data-here></span>/api/location/all</h3>
 	<p>
 		API route used to extract sound intensity data in <a href="https://geojson.org/" target="_blank">GeoJSON</a> format.
@@ -29,13 +47,15 @@
 		Method: <code>GET</code>
 	<p>
 		Parameters:
-		<ul>
+		<ul class="secondaryList">
 			<li><code>fromDate</code> (optional): Unix timestamp that is the lower threshold for data filtering by date.
 			<li><code>toDate</code> (optional): Unix timestamp that is the upper threshold for data filtering by date.
+			<li><code>topLeft</code> : Geographical coordinates of the top left corner of the viewport in [lon, lat] format.
+			<li><code>bottomRight</code> : Geographical coordinates of the bottom right corner of the viewport in [lon, lat] format.
 		</ul>
 	<p>
 		Example request:
-		<code><span data-here></span>/api/location/all?fromDate=1586815200000&toDate=1588197600000</code>
+		<code><span data-here></span>/api/location/all?topLeft=19.919400997161866,50.07729041216385&bottomRight=19.97059900283814,50.050705904456635</code>
 	<p>
 		Response body:
 		<pre>
@@ -80,5 +100,11 @@ MediaType: GeoJson
 }
 			</code>
 		</pre>
-		
+	<h2>FAQ</h2>
+	<h3><a name="mapImplementation"></a>Which map engine is used for data visualization?</h3>
+	<p>
+		We use <a href="https://openlayers.org/">OpenLayers</a> to visualize collected data on our website. It's the best choice if you want to build an application using our data. You can find OpenLayers' documentation <a href="https://openlayers.org/en/latest/apidoc/">here</a>.
+	<h3><a name="opensource"></a>Is City Loudness Meter open-source?</h3>
+	<p>
+		Yes, you can find sources in <a href="https://github.com/blaszczakpawel/city-loudness-meter">our repository on GitHub</a>.
 </main>
