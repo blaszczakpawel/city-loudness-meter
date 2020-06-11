@@ -57,9 +57,17 @@ const source = new ol.source.Vector({
 
 const heatmap = new ol.layer.Heatmap({
 	source,
-	blur: 25,
-	radius: 25,
-	weight: (feature) => feature.get('magnitude') / 100
+	blur: 50,
+	radius: 20,
+	weight: (feature) => {
+		const minMagnitude = 30 // May change?
+		const maxMagnitude = 100 // May change?
+		const minZoom = 2.3
+		const maxZoom = 28
+		const magicNumbers = [5, 0.01] // No mortal man can win this day
+
+		return (feature.get('magnitude') - minMagnitude) / (maxMagnitude - minMagnitude) * (map.getView().getZoom() - minZoom) / (maxZoom - minZoom) / magicNumbers[0] + magicNumbers[1]
+	}
 })
 
 const tile = new ol.layer.Tile({

@@ -115,7 +115,7 @@
 }
 
 #scale::before {
-	content: "30dB";
+	content: "50dB";
 	bottom: -1.5rem;
 }
 
